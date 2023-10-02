@@ -1,0 +1,50 @@
+# computer pogram button application
+
+from tkinter import *
+import os
+
+def restart():
+    os.system("shutdown /r /t 1")
+
+def retart_time():
+    os.system("shutdown /r /t 20")
+
+def logout():
+    os.system("shutdown /r /t -1")
+
+def shutdown():
+    os.system("shutdown /s /t 1")
+
+
+
+st = Tk()
+st.title("shutDown app")
+st.geometry("500x500")
+st.config(bg="silver")
+
+
+r_button = Button(st, text="Restart", font=("Time New Roman",30,"bold"),
+                   relief=RAISED, Cursor="plus",command=restart)
+r_button.place(x=200,y=60,height=50,width=100)
+
+
+rt_button = Button(st, text="Restart Time", font=("Time New Roman",30,"bold"),
+                    relief=RAISED, Cursor="plus",command=retart_time)
+rt_button.place(x=250,y=190,height=50,width=200)
+
+
+lg_button = Button(st, text="logout", font=("Time New Roman",30,"bold"),
+                    relief=RAISED, Cursor="plus",command=logout)
+lg_button.place(x=200,y=170,height=50,width=200)
+
+
+st_button = Button(st, text="Shutdown", font=("Time New Roman",30,"bold"),
+                    relief=RAISED, Cursor="plus",command=shutdown)
+st_button.place(x=370,y=50,height=50,width=200)
+
+
+
+st.mainloop
+
+
+

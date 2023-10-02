@@ -1,0 +1,31 @@
+# how to make qr code 
+
+
+# # qr code verson 1.0
+# QR code generator in python
+
+import qrcode as qr
+img= qr.make("https://www.pygame.org/docs/ref/color.html")
+img.save("lord_corporation.png")
+
+
+
+# qr code verson 2.0 
+import qrcode
+from PIL import Image
+
+qr=qrcode.QRCode(version=1,
+                 error_correction=qrcode.constants.ERROR_CORRECT_H,
+                 box_size=20,border=10,)
+
+
+
+qr.add_data("https://www.pygame.org/docs/ref/color.html")
+qr.make(fit=True)
+img=qr.make_image(fill_color="indigo",back_color="silver",border_color="red")
+img.save("website page.png")
+
+
+
+
+

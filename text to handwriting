@@ -1,0 +1,11 @@
+import pywhatkit as pw
+
+text= """ the excellent ceo of 21st centure aplord"""
+
+pw.text_to_handwriting(text, "demo12.png", [0,0,138])
+print("END")
+
+
+
+
+

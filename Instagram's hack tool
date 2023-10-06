@@ -1,0 +1,18 @@
+from instabot import Bot 
+bot=Bot()
+bot.login(username="ap.lord99", password="****")
+#bot.follow("richardbranson")
+#bot.upload_photo("C:/Users/Asus/Pictures/Screenshots/Marketing/Your paragraph text (5).jpg")
+#bot.send_messages( " i love python",["richardbranson"])
+#follower =bot.get_user_followers("ap.lord99")
+f#or follower in follower:
+  #  print(bot.get_user_info(follower))
+
+
+#following =bot.get_user_followers(" ap.lord99 ")
+#for Following in following:
+#    print(bot.get_user_info(Following))
+
+
+
+

@@ -1,0 +1,83 @@
+# voice Assistance programme using python lng...
+
+from distutils.errors import UnknownFileError
+import pyttsx3
+import speech_recognition as sr
+import webbrowser
+import datetime
+import pyjokes
+import os
+import time
+
+
+
+
+def sptext():
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening...")
+        recognizer.adjust_for_ambient_noise(source)
+        audio = recognizer.listen(source)
+        try:
+            print("recognizing...")
+            data = recognizer.recognize_google(audio)
+            print(data)
+            return data
+        except sr.UnknownFileError:
+            print("Not Understanding ")
+
+def speechtx(x):
+    engine = pyttsx3.init()
+    voices = engine.getProperty('voices')
+    engine.setProperty('voice', voices[1].id)
+    rate =engine.getProperty('rate')
+    engine.setProperty('rate',130)
+    engine.say(x)
+    engine.runAndWait()
+
+if __name__ == '__main__':
+
+
+    if "atresha" in sptext().lower() == " atresha":
+            while True:
+
+                    data1 =sptext().lower()
+                    if "what is your name" in data1:
+                        name = " my name is atresha "
+                        speechtx(name)
+                    elif " old are you" in data1:
+                        age = " i am two year old "
+                        speechtx(age)    
+                    elif 'now time' in data1:
+                        time = datetime.datetime.now().strftime("%I%M%p")
+                        speechtx(time)    
+
+                    elif ' youtube ' in data1:
+                        webbrowser.open("https://www.youtube.com/")    
+
+                    elif ' youtube ' in data1:
+                        webbrowser.open("https://www.wwe.com/")   
+
+                    elif "joke" in data1:
+                        joke_1 = pyjokes.get_joke(languages="en",category="neutral")
+                        print(joke_1)
+                        speechtx(joke_1)
+
+                    elif 'play song ' in data1:
+                        add = "C:\Users\Asus\Documents\pythn\Garbage"
+                        listsong = os.listdir(add)
+                        print(listsong)
+                        os.startfile(os.path.join(add,listsong[1]))
+
+                    elif "exit" in data1:
+                        speechtx(joke_1)
+                        break
+
+                    time.sleep(5)
+
+else:
+    print("no recognisation")
+
+
+
+

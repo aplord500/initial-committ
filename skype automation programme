@@ -1,0 +1,18 @@
+#skype automation programme
+
+from skpy import Skype
+
+
+Slogin = Skype("akashfreelance369@gmail.com", "A1K2A3S4H")
+
+contact = Slogin.contacts["live:.cid.beb67073a5eccb1b"]
+with open("C:/Users/Asus/Documents/pythn/Garbage/images.jpg", "rb") as f:
+    contact.chat.sendFile(f,"images.jpg",image=True)
+
+
+#group = Slogin.chats.create(["live:.cid.beb67073a5eccb1b",])
+#contact = Slogin.contacts [" live:.cid.beb67073a5eccb1b "]
+#contact.chats.sendMsg(" Hi How are you .")
+#for i in contact :
+#    print(i)
+

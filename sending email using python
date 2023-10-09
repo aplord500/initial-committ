@@ -1,0 +1,27 @@
+# sending email using python 
+
+import smtplib as s 
+
+ob = s.SMTP('smtp.gmail.com',587)
+ob.ehlo()
+ob.starttls()
+ob.login('aplord369@gmail.com','aplord1234')
+subject= " documants  "
+body = "hi i m aplord "
+message = " subject:{}\n\n{} ". formate(subject,body)
+listadd=['akashprajapati0980@gmail.com,',
+          "akashprajapati0980@gmail.com",]
+ob.sendmail ( 'aplord369@gmail.com', 'akashprajapati0980@gmail.com', 'akashprajapati0980@gmail.com',message )
+print(" send mail ")
+ob.quit()
+
+
+
+
+
+
+
+
+
+
+

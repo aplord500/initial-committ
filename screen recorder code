@@ -1,0 +1,66 @@
+# screen recorder code 
+
+
+# install 4 main moduel in python 
+            #  1  pip install opencv-python
+            #  2  pip install pywin32
+            #  3  pip install numpy 
+            #  4  pip install pyautogui
+
+
+
+import cv2                                                  # got when we hrough opencv model 
+import pyautogui                                            #
+from  win32api import GetSystemMetrics                      # getsystem use to regulate the screen activity 
+import numpy as np 
+import time  
+
+width = GetSystemMetrics(0)                                    # geometry size width 
+height = GetSystemMetrics(1)                                   # help for height    
+
+
+
+
+# ( both function use to incresde resolution )
+
+dim = (width,height)                                             # for resolution 
+f = cv2.VideoWriter_fourcc(*"XVID")                              #  xvid it help to capture video 
+output = cv2.VideoWriter("test.mp4", f, 30.0, dim )              # giving  location , formate , frame persecond caputer photo
+
+
+
+# now we will note time , how much time we gona run video
+
+now_start_time = time.time()                                      # video capture
+dur = 10+4                                                        # duration of video 
+end_time = now_start_time +dur                                     # we have given end time with use of start and dur..
+
+
+
+# now will talk about recording of video 
+
+while True:                                                         # making loop 
+    image = pyautogui.screenshot()                                  # it help to take screenshot 
+    frame_1 = np.array(image)                                        # all screeshot will accoumulate in frame, np.array help to store
+    frame = cv2.cvtColor(frame_1, cv2.COLOR_BGR2BGRA)                # cv2 help to set colour 
+    output.write(frame)                                          # previous called function
+
+    # getting curret time
+
+    c_time = time.time()                                       # current time 
+    if c_time > end_time:                                      #stoping while loop 
+        break
+
+
+
+# releasing video 
+
+
+output.release()
+
+print("---END---")
+
+
+# ( while righting the code make sure you dont give any gap because it will take time to load the code )
+
+
